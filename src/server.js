@@ -34,6 +34,6 @@ app.listen(3000, () => {
 })
 
 app.get("/username" , (req , res) => {
-    const user = {name: "John Doe"};
-    res.json(user);
+    const {username} = req.query;
+    res.json({name:  username || "Guest"});
 }) 
